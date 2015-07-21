@@ -9,3 +9,5 @@ Hints for the first problem:
     - takes the value returned by the `sum` function and displays it on the page
 
 */
+var button1 = document.getElementById('sum-all');
+button1.addEventListener('getElementsByName('value')', sum(), false);
