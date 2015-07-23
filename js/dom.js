@@ -8,6 +8,13 @@ Hints for the first problem:
     - passes all of its options to the `sum` function defined in `logic.js`
     - takes the value returned by the `sum` function and displays it on the page
 
-*/
-var button1 = document.getElementById('sum-all');
-button1.addEventListener('getElementsByName('value')', sum(), false);
+ */
+var addAll = document.getElementById("sum-all").addEventListener("click", function(){
+  var prices = document.getElementsByName("prices")[0].children;
+    var sumAnswer = document.getElementById("answers");
+      sumAnswer.innerHTML = (sumAll(prices));
+});
+
+
+
+
