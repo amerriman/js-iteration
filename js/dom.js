@@ -22,3 +22,8 @@ var averageAll = document.getElementById("average-all").addEventListener("click"
         averageAnswer.innerHTML = (avAll(prices));
   });
 
+var addSel = document.getElementById("sum-selected").addEventListener("click", function(){
+  var selectedItems = document.getElementsByTagName("select")[0].selectedOptions;
+    var sumSelecteds =document.getElementById("answers");
+      sumSelecteds.innerHTML = (sumSelected(selectedItems));
+});

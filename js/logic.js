@@ -31,3 +31,11 @@ function avAll(options){
   return total/options.length;
 }
 //console.log(avAll());
+
+function sumSelected(options){
+  var total = 0;
+  for (var i = 0; i < options.length; i++) {
+    total += parseInt(options[i].value);
+  }
+  return total;
+}
