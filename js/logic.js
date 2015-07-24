@@ -11,7 +11,7 @@ NOTE: use a `for` loop to make this happen.
 
 */
 //1
-//var test = [ 4, 2, 3];
+// var test = [ 10, 5, 10, 3, 5];
 
 function sumAll(options){
   var total = 0;
@@ -20,5 +20,14 @@ function sumAll(options){
   }
   return total;
 }
+//console.log(sumAll());
 
-//console.log(sumAll(options));
+function avAll(options){
+  var total = 0;
+  for (var i = 0; i < options.length; i++) {
+    total += parseInt(options[i].value);
+    //console.log(total, "total");
+  }
+  return total/options.length;
+}
+//console.log(avAll());

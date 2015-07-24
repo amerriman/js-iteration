@@ -16,5 +16,9 @@ var addAll = document.getElementById("sum-all").addEventListener("click", functi
 });
 
 
-
+var averageAll = document.getElementById("average-all").addEventListener("click", function(){
+    var prices = document.getElementsByName("prices")[0].children;
+      var averageAnswer = document.getElementById("answers");
+        averageAnswer.innerHTML = (avAll(prices));
+  });
 
