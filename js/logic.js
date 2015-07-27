@@ -11,7 +11,7 @@ NOTE: use a `for` loop to make this happen.
 
 */
 //1
-// var test = [ 10, 5, 10, 3, 5];
+//var test = [ 10, 5, 10, 3, 5];
 
 function sumAll(options){
   var total = 0;
@@ -39,3 +39,13 @@ function sumSelected(options){
   }
   return total;
 }
+
+function numSelected(options){
+  var total = 0;
+  var newTotal = 0;
+  for (var i = 0; i <= options.length; i++) {
+    newTotal = total + i;
+  }
+  return newTotal;
+}
+
