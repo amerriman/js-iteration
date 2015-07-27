@@ -39,6 +39,13 @@ var numSel = document.getElementById("count-selected").addEventListener("click",
       var numSels = document.getElementById("answers");
         numSels.innerHTML = (numSelected(selectedItems));
 });
+
+var avSel = document.getElementById("average-selected").addEventListener("click", function(){
+  var selectedItems = document.getElementsByTagName("select")[0].selectedOptions;
+  var avSels = document.getElementById("answers");
+  avSels.innerHTML = (avSelected(selectedItems));
+});
+
 }
 
 else if (document.URL === "file:///Users/Herkamina/Gschool-Repos/js-iteration/names.html"){
@@ -63,7 +70,7 @@ var names = document.getElementById("first-names").addEventListener("click", fun
   var firstNames = document.getElementsByTagName("textarea")[0].value.split("\n");
 //console.log(firstNames);
 //copy of the firstNames array because we are going to destroy it as we shift names off of it below
-  var firstNamesCopy = document.getElementsByTagName("textarea")[0].value.split("\n");
+  var firstNamesCopy = firstNames.slice();
 //console.log(firstNames);
   for (var i = 0; i < firstNames.length; i++) {
     //console.log("firstNames",firstNames);
@@ -81,7 +88,7 @@ var names = document.getElementById("first-names").addEventListener("click", fun
 var names = document.getElementById("last-names").addEventListener("click", function(){
   ul.innerHTML = null;
   var lastNames = document.getElementsByTagName("textarea")[0].value.split("\n");
-  var lastNamesCopy = document.getElementsByTagName("textarea")[0].value.split("\n");
+  var lastNamesCopy = lastNames.slice();
   for (var i = 0; i < lastNames.length; i++) {
     var lastNames2 = lastNamesCopy.shift().split(/ (.+)/);
     var li = document.createElement("li");
@@ -98,22 +105,23 @@ var names = document.getElementById("names-with-lengths").addEventListener("clic
   ul.innerHTML = null;
   //get the list of names from the text area and make it into an array by splitting on the new line
   var allNames = document.getElementsByTagName("textarea")[0].value.split("\n");
-      //make an empty array to hold the lengths of each name without the spaces
+  //console.log(allNames);
+  //make an empty array to hold the lengths of each name without the spaces
   var nameCount3 = [];
-  //a clean copy of allNames that will be destroyed as it finds the cound of the characters
-  var nameCount = document.getElementsByTagName("textarea")[0].value.split("\n");
-      for (var i = 0; i < allNames.length; i++) {
-        //take a name from the nameCount array, take out the spaces and count the characters
-        var nameCount2 = nameCount.shift().split(" ").join("").length;
-           //push the length just counted into the array nameCount3
-        nameCount3.push(nameCount2);
-        console.log("nameCount", nameCount);
+  //a clean copy of allNames that will be destroyed as it finds the count of the characters
+  var nameCount = allNames.slice();
+    for (var i = 0; i < allNames.length; i++) {
+      //take a name from the nameCount array, take out the spaces and count the characters - find a better way to do this
+      var nameCount2 = nameCount.shift().split(" ").join("").length;
+         //push the length just counted into the array nameCount3
+      nameCount3.push(nameCount2);
+      //console.log("nameCount", nameCount);
 
-        //make an li, append it to the ul, and make the li show the names and the lengths.
-        var li = document.createElement("li");
-        ul.appendChild(li);
-        //show the name, and the count, at the same indext number of each array
-        li.innerHTML = "The # of characters in " + allNames[i] + " is " + nameCount3[i];
+      //make an li, append it to the ul, and make the li show the names and the lengths.
+      var li = document.createElement("li");
+      ul.appendChild(li);
+      //show the name, and the count, at the same index number of each array
+      li.innerHTML = "The # of characters in " + allNames[i] + " is " + nameCount3[i];
     }
 
 });

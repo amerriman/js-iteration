@@ -49,3 +49,11 @@ function numSelected(options){
   return newTotal;
 }
 
+function avSelected(options){
+  var total = 0;
+  for (var i = 0; i < options.length; i++) {
+   total += parseInt(options[i].value);
+  };
+  return total/options.length;
+}
+
